@@ -11,11 +11,11 @@ import matplotlib.pyplot as plt
 from tqdm import tqdm
 import os
 
-os.environ["CUDA_VISIBLE_DIVICES"]='0'
+os.environ["CUDA_VISIBLE_DEVICES"]='0'  # 设置使用的显卡编号
 
 encoder_handle = r'model/bert_encoder/'
 preprocesser_handle = r'model/bert_preprocessor/'
-ckp_handle = r'./checkpoints2/bert_classifier'
+ckp_handle = r'./checkpoints/bert_classifier'  # 训练好的模型权重
 seq_length = 128
 
 df = pd.read_csv(r'online_shopping_10_cats.csv')
@@ -101,7 +101,7 @@ for (x, y) in tqdm(val_ds.batch(128)):
     classes_y = tf.reshape(y[:, 1], [-1, 1])  # 分类标签
     emotion, classes = classifier_model(x, training=False)
     emotion_acc.update_state(emotion_y, emotion)
-    update_acc(classes_y, classes, class_acc, num=1)
+    update_acc(classes_y, classes, class_acc, num=3)
 
 print(f"情感分类准确率: {emotion_acc.result().numpy():.2%}")
 print(f"商品分类准确率: {class_acc[0]/class_acc[1]:.2%}")
