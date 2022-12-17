@@ -16,6 +16,8 @@ matplotlib
 pandas
 ```
 
+学校服务器配置：RTX3090，训练两个epochs大致需要45mins.
+
 ### 中文商品数据集
 
 使用由[jinhuakst](https://github.com/SophonPlus/ChineseNlpCorpus/commits?author=jinhuakst)整理的[ChineseNlpCorpus](https://github.com/SophonPlus/ChineseNlpCorpus)中的两个数据集，分别作为训练集与测试集：
