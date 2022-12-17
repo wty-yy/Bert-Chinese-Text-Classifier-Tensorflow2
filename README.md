@@ -47,5 +47,7 @@ pandas
 
 Tensorflow中Bert模型分为两个部分，可以从Tensorflow-Hub中下载，链接为[bert_zh_preprocess](https://tfhub.dev/tensorflow/bert_zh_preprocess/3)和[bert_zh_L-12_H-768_A-12](https://tfhub.dev/tensorflow/bert_zh_L-12_H-768_A-12/4)，分别为预处理模型（句子分词和向量化）和bert模型.
 
-模型导入方法我是将两个模型分别下载到本地的 `./model/bert_preprocessor `和`./model/bert_encoder`中，由于GitHub的上传文件大小限制，无法上传bert模型，只能够自己去下然后解压到这两个文件夹中.
+模型导入方法我是将两个模型分别下载到本地的 `./model/bert_preprocessor `和`./model/bert_encoder`中然后直接调用，由于bert模型巨大 `392MB` 所以下载有点慢.
+
+
 
