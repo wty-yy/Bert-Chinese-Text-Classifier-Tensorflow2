@@ -6,8 +6,10 @@
 ### 环境
 
 ```
-Python 3.9.x
-TensorFlow 2.9.2
+python 3.9.x
+tensorflow 2.9.2
+tensorflow-hub  (安装与tensorflow相同版本的即可)
+tensorflow-text (安装与tensorflow相同版本的即可)
 tqdm
 numpy
 matplotlib

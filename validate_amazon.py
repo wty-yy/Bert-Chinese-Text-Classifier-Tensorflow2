@@ -15,10 +15,7 @@ os.environ["CUDA_VISIBLE_DIVICES"]='0'
 
 encoder_handle = r'model/bert_encoder/'
 preprocesser_handle = r'model/bert_preprocessor/'
-# ckp_handle = r'./checkpoints/bert_classifier'
-ckp_handle = r'./checkpoints2/bert_classifier_seq_256'
-# ckp_handle = r'./checkpoints2/bert_classifier_epoch2'
-# ckp_handle = r'./checkpoints/bert_classifier_seq_256_epoch2'
+ckp_handle = r'./checkpoints2/bert_classifier'
 seq_length = 128
 
 df = pd.read_csv(r'online_shopping_10_cats.csv')
@@ -109,17 +106,3 @@ for (x, y) in tqdm(val_ds.batch(128)):
 print(f"情感分类准确率: {emotion_acc.result().numpy():.2%}")
 print(f"商品分类准确率: {class_acc[0]/class_acc[1]:.2%}")
 print(f"总计验证数目：{emotion_acc.count.numpy()}")
-"""
-设置为前排名前三的认为正确
-bert_classifier_epoch1
-情感分类准确率: 73.95%
-商品分类准确率: 84.04%
-
-bert_classifier_epoch2
-情感分类准确率: 78.74%
-商品分类准确率: 81.75%
-
-bert_classifier_seq_256
-情感分类准确率: 76.38%
-商品分类准确率: 83.71%
-"""

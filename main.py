@@ -29,7 +29,7 @@ seed = 109  # 随机种子
 encoder_handle = r'model/bert_encoder/'  # 读取bert模型
 preprocesser_handle = r'model/bert_preprocessor/'  # 读取预处理模型
 ckp_load_handle = None  # 模型加载路径
-ckp_save_handle = r'./checkpoints2/bert_classifier_layout1_epochs2'  # 模型保存路径
+ckp_save_handle = r'./checkpoints/bert_classifier'  # 模型保存路径
 seq_length = 128  # 预处理文本最大长度
 batch_size = 32  # batch大小
 learning_rate = [1e-4, 1e-5]  # 动态调整步长，每个epoch调整一次
@@ -211,54 +211,3 @@ test(val_ds)
 print(f"情感分类准确率: {emotion_acc.result().numpy():.2%}")
 print(f"商品分类准确率: {class_acc.result().numpy():.2%}")
 print(f"总计验证数目：{emotion_acc.count.numpy()}")
-
-"""
-bert_classifier：dropout=0.3 epochs=1
-step=2300/2343: emotion_acc=0.944 emotion_loss=0.165 class_acc=0.919 class_loss=0.248
-val_emotion_acc=0.940 val_emotion_loss=0.168 val_class_acc=0.877 val_class_loss=0.354
-情感分类准确率: 93.67%
-商品分类准确率: 88.62%
-
-bert_classifier: dropout=0.3 epochs=2
-step=4600/4686: emotion_acc=0.978 emotion_loss=0.070 class_acc=0.952 class_loss=0.130
-val_emotion_acc=0.956 val_emotion_loss=0.142 val_class_acc=0.893 val_class_loss=0.318
-4688it [45:32,  1.72it/s]
-情感分类准确率: 94.57%
-商品分类准确率: 90.63%
-
-bert_classifier: dropout=0.3 epochs=3
-step=2300/2343: emotion_acc=0.982 emotion_loss=0.060 class_acc=0.965 class_loss=0.100
-val_emotion_acc=0.949 val_emotion_loss=0.180 val_class_acc=0.892 val_class_loss=0.346
-Save in './checkpoints2/bert_classifier_epoch3'
-2344it [24:03,  1.62it/s]
-情感分类准确率: 94.70%
-商品分类准确率: 90.92%
-
-bert_classifier: dropout=0.3 epochs=4
-step=2300/2343: emotion_acc=0.987 emotion_loss=0.046 class_acc=0.969 class_loss=0.082
-val_emotion_acc=0.945 val_emotion_loss=0.203 val_class_acc=0.894 val_class_loss=0.410
-Save in './checkpoints2/bert_classifier_epoch4'
-2344it [24:24,  1.60it/s]
-整个验证集上测试
-情感分类准确率: 94.42%
-商品分类准确率: 90.97%
-
-bert_classifier: dropout=0.1, epochs=1
-step=2300/2343: emotion_acc=0.944 emotion_loss=0.149 class_acc=0.915 class_loss=0.249
-val_emotion_acc=0.937 val_emotion_loss=0.209 val_class_acc=0.869 val_class_loss=0.369
-情感分类准确率: 93.09%
-商品分类准确率: 88.56%
-
-bert_classifier: dropout=0.1, epochs=2
-step=4600/4686: emotion_acc=0.966 emotion_loss=0.095 class_acc=0.948 class_loss=0.146
-val_emotion_acc=0.943 val_emotion_loss=0.185 val_class_acc=0.895 val_class_loss=0.305
-4688it [45:30,  1.72it/s]
-情感分类准确率: 93.99%
-商品分类准确率: 90.59%
-
-bert_classifier: dropout=0.3, epochs=2, seq_length=256, batch_size=16
-step=9300/9374: emotion_acc=0.957 emotion_loss=0.114 class_acc=0.940 class_loss=0.164
-val_emotion_acc=0.936 val_emotion_loss=0.191 val_class_acc=0.871 val_class_loss=0.390
-情感分类准确率: 93.26%
-商品分类准确率: 89.45%
-"""
