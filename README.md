@@ -82,7 +82,7 @@ main.ipynb, validate.ipynb
 
 `batch=32, epochs=1, SeqLength=128, dropout=0.3` 的训练数据变化图
 
-<img src="./README.figure/acc.png" alt="acc" style="zoom:15%;" /><img src="./README.figure/loss.png" alt="loss" style="zoom:15%;" />
+<img src="./README.figure/acc_loss.png" alt="acc_loss" style="zoom:15%;" />
 
 训练集与验证集上尝试三种模型的准确率如下所示（左侧为**情感分类准确率**、右侧为**商品分类准确率**）：
 
